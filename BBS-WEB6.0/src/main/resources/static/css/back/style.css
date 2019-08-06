@@ -1,0 +1,189 @@
+/*body{
+   padding-top:70px;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-size: 14px;
+   line-height: 1.42857143;
+   color: #333;
+   background-color: #fff;
+}
+
+div#workingArea{
+	margin:0px 40px;
+}
+
+div.addDiv{
+	width:400px;
+	margin:0px auto;
+}
+div.editDiv{
+	width:400px;
+	margin:0px auto;
+
+}
+
+table.addTable{
+	width:100%;
+}
+table.editTable{
+	width:100%;
+}
+table.editTable td{
+	padding:5px;
+}
+
+table.addTable td{
+	padding:5px;
+}
+
+div.pageDiv{
+	text-align:center;
+}
+div.listDataTableDiv{
+	min-height:220px;
+}
+div.footer{
+	margin:20px;
+}
+div.editPVDiv{
+	width:800px;
+	margin:0 auto;
+
+}
+span.pvName{
+	display:inline-block;
+	width:100px;	
+	color:#555555;
+	font-size:16px;
+/* 	font-weight:bold; */
+	/*margin-left:20px;
+/*
+}
+div.eachPV{
+	float:left;
+	margin:5px;
+}
+span.pvValue{
+	display:inline-block;
+	width:200px;
+	padding:0px;
+}
+
+
+span.pvValue input{
+	outline: none;
+	border:2px solid lightGray;
+}
+div.addPictureDiv{
+	width:400px;
+}
+table.addPictureTable{
+
+}
+td.addPictureTableTD{
+	padding:10px 100px;
+	text-align:center;	
+	vertical-align: top;
+}
+div.orderPageOrderItem{
+	width:100%;
+	padding:20px;
+}
+table.orderPageOrderItemTable td{
+	padding:5px;
+}
+tr.orderPageOrderItemTR{
+	display:none;
+}
+ul.pagination a.current{
+	font-weight:bold;
+	color:black;
+}
+td{
+	font-size:14px;
+}
+th{
+	font-size:14px;
+}
+.disableHref{
+	cursor:default;
+	color:#E5E0E0;
+	text-decoration:none;        
+}*/
+#workingArea{
+	margin:0px 40px;
+}
+
+td{
+	font-size:14px;
+}
+th{
+	font-size:14px;
+}
+.listDataTableDiv{
+	min-height:220px;
+}
+.listuser{
+    margin-top:50px;
+    float:left;
+
+}
+.nav-item{
+    margin-left:50px;
+    font-size:20px;
+    width:100px;
+}
+
+.nav-item a:hover{
+    color:white !important;
+}
+
+.success{
+    background-color:#CCFFFF;
+}
+
+.input-group{
+    float:right;
+    width:400px;
+    margin-top:40px;
+    margin-bottom:10px;
+}
+.pageDiv{
+    width:400px;
+    margin:0 auto;
+}
+
+.adduser{
+    margin:40px 0px;
+}
+
+.addsubmit{
+    float:right;
+}
+
+.footer{
+    padding:20px 0;
+    color:#999;
+    font-size:0.8em;
+    text-align:center;
+    background-color:#f9f9f9;
+    border-top:1px solid #e5e5e5;
+}
+
+#addworkingArea{
+     margin:0px auto;
+     min-width:349px;
+     width:349px;
+     margin-bottom:30px;
+}
+
+.pagep{
+    line-height:2.4;
+    color:cadetblue;
+}
+
+.errorMsg{
+    color:red;
+}
+.line-h td{
+    line-height:45px;
+}

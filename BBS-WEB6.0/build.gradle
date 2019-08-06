@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+group = 'BBS-WEB'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	maven {
+		name "aliyunmaven"
+		url "http://maven.aliyun.com/nexus/content/groups/public/"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile('org.springframework.boot:spring-boot-starter-security')
+	implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10'
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.1.5.RELEASE'
+
+	
+	jar {
+		String someString = ''
+		configurations.runtime.each {someString = someString + " lib//"+it.name}
+		manifest {
+			attributes 'Main-Class': 'com.xbs.AppMain'
+			attributes 'Class-Path': someString
+		}
+	}
+	mainClassName = 'com.example.demo.DemoApplication'	
+
+
+
+	task copyJar(type:Copy){
+		from configurations.runtime
+		into ('build/libs/lib')
+	}
+
+}

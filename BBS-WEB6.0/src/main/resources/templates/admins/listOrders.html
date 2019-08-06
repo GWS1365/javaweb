@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/admins/adminsHeader::html('超市管理')" ></head>
+
+<body>
+<div th:replace="include/admins/adminsNavigator::html" ></div>
+<div id="workingArea" >
+    <div class="badge badge-info listuser" >订单管理</div>
+        <div class="input-group">
+            <input type="text" class="form-control" id="searchOName" placeholder="输入订单编号进行搜索">
+            <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button" id="searchONameBtn">Go!</button>
+            </span>
+            <a class="btn btn-primary" href="/admins/addOrder" th:href="@{/admins/addOrder}" role="button"><i class="fa fa-plus" aria-hidden="true"></i>创建</a>
+        </div>
+    <br>
+    <br>
+    <div class="listDataTableDiv">
+        <table class="table table-striped table-bordered table-hover  table-condensed">
+            <thead>
+            <tr class="success">
+                <th>订单编号</th>
+                <th>用户名称</th>
+                <th>商品名称</th>
+                <th>商品数量</th>
+                <th>金额</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="o:${orders}">
+                <td th:text="${o.id}">1</td>
+                <td th:text="${o.users}">高文森</td>
+                <td th:text="${o.products}">123</td>
+                <td th:text="${o.onum}">11</td>
+                <td th:text="${o.prices*o.onum}">11</td>
+                <td>
+                    <div>
+                        <a th:href="@{'/admins/modifyOrder?id='+ ${o.id}}">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        <a th:href="@{'/admins/deleteOrder?id=' + ${o.id}}"  onclick="return del()">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pageDiv">
+        <ul class="pagination">
+            <p class="pagep">当前第:<span th:text="${pageInfo.pageNum}"></span>页&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <li class="page-item"><a class="page-link" href="/admins/listOrders?page=1">«</a></li>
+            <li class="page-item">
+			<span th:if="${pageInfo.hasPreviousPage}">
+				<a class="page-link" th:href="@{'/admins/listOrders?page='+${pageInfo.pageNum-1}}">‹</a>
+			</span>
+            </li>
+            <span th:each="p:${pageInfo.navigatepageNums }">
+			<li class="page-item">
+				<a class="page-link pageN"th:href="@{'/admins/listOrders?page='+${p}}"><span th:text="${p}"></span></a>
+			</li>
+		</span>
+            <li class="page-item">
+			<span th:if="${pageInfo.hasNextPage}">
+				<a class="page-link" th:href="@{'/admins/listOrders?page='+${pageInfo.pageNum+1}}">›</a>
+			</span>
+            </li>
+            <li class="page-item"><a class="page-link" th:href="@{'/admins/listOrders?page='+${pageInfo.pages}}">»</a></li>
+        </ul>
+    </div>
+</div>
+<div th:replace="include/admins/adminsFooter::html" ></div>
+</body>
+</html>

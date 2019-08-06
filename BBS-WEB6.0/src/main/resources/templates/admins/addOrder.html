@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/admins/adminsHeader::html('创建新用户')" ></head>
+
+<body>
+<div th:replace="include/admins/adminsNavigator::html" ></div>
+
+<div id="addworkingArea">
+    <div class="badge badge-info adduser" >创建订单</div>
+        <form class="addform" th:action="@{/admins/addOrder}" method="post" th:object="${order}">
+            <input type="hidden" name="id" th:value="*{id}">
+            <div class="form-group">
+                <label for="uid">用户ID</label> <input type="text" class="form-control" name="uid" id="uid">
+            </div>
+            <div class="form-group">
+                <label for="pid">商品ID</label> <input type="text" class="form-control" name="pid" id="pid">
+            </div>
+            <div class="form-group">
+                <label for="onum">商品数量</label> <input type="text" class="form-control" name="onum" id="onum">
+            </div>
+            <span class="errorMsg" th:text="${errorMsg}"></span>
+            <a class="btn btn-primary" href="/admins/listOrders" th:href="@{/admins/listOrders}" role="button">返回</a>
+            <input type="submit" class="btn btn-info addsubmit" value="提交">
+        </form>
+</div>
+<div th:replace="include/admins/adminsFooter::html" ></div>
+</body>
+</html>

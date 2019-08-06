@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/admins/adminsHeader::html('超市管理')" ></head>
+<body>
+<div th:replace="include/admins/adminsNavigator::html" ></div>
+<script>
+         $(function(){
+            var vue = new Vue({
+                el:'#workingArea',
+                data:{
+                    beans:[],
+                },
+                mounted:function(){
+                    this.list();
+                },
+                methods:{
+                    list:function(){
+                        axios.get('/ggg').then(function(response){
+                            vue.beans = response.data;
+                        })
+                     },
+                 }
+             });
+         });
+     </script>
+<div id="workingArea" >
+    <div class="badge badge-info listuser" >商品管理</div>
+        <div class="input-group">
+            <input type="text" class="form-control" id="searchPName" placeholder="输入商品名称进行搜索">
+            <span class="input-group-btn">
+						<button class="btn btn-secondary" type="button" id="searchPNameBtn">Go!</button>
+					</span>
+            <a class="btn btn-primary" href="/admins/addProduct" th:href="@{/admins/addProduct}" role="button"><i class="fa fa-plus" aria-hidden="true"></i>创建</a>
+        </div>
+    <br>
+    <br>
+    <div class="listDataTableDiv" id="listDataTableDiv">
+        <div>{{beans[1]}}</div>
+        <table class="table table-striped table-bordered table-hover  table-condensed">
+            <thead>
+            <tr class="success">
+                <th>商品图片</th>
+                <th>ID</th>
+                <th>商品名称</th>
+                <th>商品数量</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="bean in beans" class="line-h">
+                <td><img :src="bean.img" style="width:100px !important;height:40px"></td>
+                <td>{{bean.name}}</td>
+                <td>{{bean.name}}</td>
+                <td>{{bean.num}}</td>
+                <td>{{bean.price}}</td>
+                <td>
+                    <div>
+                        <a href="'/admins/modifyProduct?id='+ bean.id">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                        <a :href="'/admins/deleteProduct?id=' + bean.id"  onclick="return del()">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div th:replace="include/admins/adminsFooter::html" ></div>
+</body>
+</html>
