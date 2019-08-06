@@ -1,0 +1,58 @@
+.ret_div{
+    /*width: 80%;*/
+    height:20%;
+    border:solid 1px #999;
+    border-radius: 10%;
+    margin: 5%;
+    padding:0;
+}
+
+.ret_div .div_first{
+    width:100%;
+    height:100%;
+    padding:3%;
+    text-align: center;
+}
+
+.ret_span{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.ret_div .div_first div{
+    font-size: 10px;
+    color: #999;
+}
+
+#card_1{
+    background-color:rgba(228,228,228,0.36);
+    margin:8% 5% 0 5%;
+}
+
+
+#card_1_div{
+    font-family: KaiTi;
+    color: #8268ff;
+    font-weight: bold;
+    font-size:20px;
+}
+
+#card_div_1{
+    color: #999;
+}
+
+#card_2{
+    background-color:rgba(228,228,228,0.36);
+    margin:5%;
+}
+
+#card_content div{
+    padding:8%;
+    letter-spacing:1px;
+    color: #999;
+}
+
+#card_3{
+    background-color:rgba(228,228,228,0.36);
+    margin:5%;
+}

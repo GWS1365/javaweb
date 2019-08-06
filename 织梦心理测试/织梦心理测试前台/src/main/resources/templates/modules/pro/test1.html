@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>智商测试1.1</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link href="${request.contextPath}/statics/css/pro/subject.css" rel="stylesheet" type="text/css"/>
+    <script src="${request.contextPath}/statics/libs/jquery.min.js"></script>
+    <script src="${request.contextPath}/statics/libs/vue.min.js"></script>
+    <script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+    <script>
+        var a = '${misUserEntity.id}';
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var id = getUrlParam("id");
+        var cid = getUrlParam("cid");
+    </script>
+</head>
+
+<body>
+<div class="page-group" id="total_test">
+    <div class="page page-current">
+        <!--顶部标题栏-->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="javascript:window.history.back()" data-transition='slide-out'>
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class="title">{{subject.test.title}}</h1>
+            <a class="button button-link button-nav pull-right" style="margin-right: 2px" href="/demos/card"
+               data-transition='slide-out'>
+                <span class="icon icon-share"></span>
+            </a>
+        </header>
+
+        <!--底部导航栏-->
+        <nav class="bar bar-tab">
+            <a class="tab-item active" href="${request.contextPath}/modules/pro/first2.html               ">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item toast_show" href="#" @click="toast()">
+                <span class="icon icon-menu"></span>
+                <span class="tab-label " id="tag">收藏</span>
+            </a>
+            <a  class="tab-item create-actions" onclick="
+                    function getUrlParam(name) {
+                    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]);
+                    return null;
+                    }
+
+                    var id = getUrlParam('id');
+                    var cid = getUrlParam('cid');
+                    $.ajax({
+                        type:'post',
+                            url:'../../mis/misorder/listByUidTid?uid='+a+'&tid='+id,
+                            data:{
+                            y:{},
+                            },
+                            success:function(r){
+                                if(r.m=='success'){
+                                    document.getElementById('y').style.display = 'block';
+                                    document.getElementById('r').style.display = 'block';
+                                }else{
+                                    document.getElementById('light').style.display = 'block';
+                                    document.getElementById('fade').style.display = 'block';
+                                }
+                            }
+                         })
+                    ">
+                <span class="icon icon-cart"></span>
+                <span class="tab-label ">购买</span>
+            </a>
+        </nav>
+
+        <!-- 页面内容区 -->
+        <div class="content">
+
+            <!--图片-->
+            <div class="img_div">
+                <img :src="subject.test.imgsrc" class="img_First">
+            </div>
+
+            <!--第一块白色区域-->
+            <div class="card_1">
+                <h4>{{subject.test.title}}</h4>
+                <p>{{subject.test.testnumber}} 人已测</p>
+                <div>￥{{subject.test.price}}</div>
+            </div>
+            <!--第二块白色区域-->
+            <div class="card_2">
+
+                <!--测评介绍-->
+                <h4>测评介绍</h4>
+                <hr class="hr_new"/>
+
+                <!--卡片1：测评理论-->
+                <div class="card" id="card_1">
+                    <div class="card-header" id="card_1_div">测评理论</div>
+                    <div class="card-content">
+                        <div class="card-content-inner" id="card_div_1">
+                            &nbsp&nbsp{{subject.test.testintroduce}}
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--测试须知-->
+                <h4>测试须知</h4>
+                <hr class="hr_new"/>
+                <!--测试须知的内容-->
+                <div class="show_1">
+                    <div class="show_1_div">
+                        <span>①</span>&nbsp&nbsp本测评为付费测试，测试时间没有限制
+                    </div>
+                    <div class="show_1_div"><span>②</span>&nbsp&nbsp付费成功后将自动跳转到答题页，建议在网络较好的情况下测试</div>
+                    <div class="show_1_div"><span>③</span>&nbsp&nbsp购买的测评均永久保存在网站底部菜单【我的测评】中，进入即可继续答题或查看报告</div>
+                </div>
+
+                <!--用户评价-->
+                <h4>精选评价</h4>
+                <hr class="hr_new"/>
+
+                <!--用户评价图-->
+                <div>
+                    <div id='user_evaluate_1'>
+                        <div class="chart"></div>
+                        <div class="chart"></div>
+                        <div class="chart"></div>
+                    </div>
+
+                    <div class="chart_tag1 shadow_border ">题目易懂性</div>
+                    <div class="chart_tag1 shadow_border">结果准确性</div>
+                    <div class="chart_tag1 shadow_border">建议实用性</div>
+        </div>
+
+                <!--用户评价内容-->
+                <div>
+                    <div id='user_evaluate_2'>
+                        <div class="evaluate_2"  v-for="e in subject.evaluates">
+                            <input hidden class="tu" :value="e.testunderstand">
+                            <p><img src="${request.contextPath}/statics/image/gao.jpg">
+                                <span class="evaluate_2_span">发布日期：{{e.createtime}} &nbsp&nbsp&nbsp&nbsp</span></p>
+                            <span class="evaluate_2_p">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{e.content}}</span>
+                            <hr class="new_hr"/>
+                        </div>
+
+                        <!--<p><a href="#" class="button button-light button_evaluate">更多评论</a></p>-->
+                    </div>
+                </div>
+                <!--相关推荐-->
+                <div>
+                    <h4>相关推荐</h4>
+                    <hr class="hr_new"/>
+                    <div v-for="r in subject.recommend">
+                        <a :href="'../../modules/pro/test1.html?id='+r.id+'&cid='+r.cid">
+                            <div class="float_div">
+                                <div class="float_text">
+                                    <h5 class="recommend_title">{{r.title}}</h5>
+                                    <p class="recommend_vtitle">{{r.testnumber}}人已测</p>
+                                    <span class="e_score">￥{{r.price}}</span>
+                                </div>
+                                <div class="float_img"><img :src=r.imgsrc class="recommend_img"/></div>
+                            </div>
+                        </a>
+                        <hr class="e_hr"/>
+                    </div>
+
+                </div>
+
+                <div id="fade" class="black_overlay"></div>
+                <div id="light" class="white_content">
+                    <img src="${request.contextPath}/statics/image/icon-pitch.png" height="180" width="180"/>
+                    <a href="javascript:void(0)"
+                       onclick="document.getElementById('light').style.display='none';
+                    document.getElementById('fade').style.display='none'">关闭
+                    </a>
+                    <a style="float: right" :href="'../../modules/pro/Purchase.html?tid='+subject.test.id+'&cid='+subject.test.cid" @click="buy()">
+                        跳转
+                    </a>
+                </div>
+
+                <div id="r" class="black_overlay"></div>
+                <div id="y" class="white_content">
+                    <img src="${request.contextPath}/statics/image/yiceping.png" height="180" width="180"/>
+                    <a href="javascript:void(0)"
+                       onclick="document.getElementById('r').style.display='none';
+                    document.getElementById('y').style.display='none'">关闭
+                    </a>
+                    <a style="float: right" external :href="'../../modules/pro/detail.html?tid='+subject.test.id+'&cid='+subject.test.cid">
+                        您以购买，重新测试
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src='${request.contextPath}/statics/js/modules/pro/echarts.js'></script>
+<script src='${request.contextPath}/statics/js/modules/pro/echarts-liquidfill.js'></script>
+<script src='${request.contextPath}/statics/js/modules/pro/test1.js'></script>
+<script src='${request.contextPath}/statics/js/modules/pro/toast.js'></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+</html>

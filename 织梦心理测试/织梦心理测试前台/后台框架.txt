@@ -1,0 +1,83 @@
+1.maven
+ pom.xml
+
+引入 springboot,mybatisplus
+
+2.mybatisplus
+
+实体层 ：
+@TableName("mis_student")
+
+@TableId
+
+dao层：
+BaseMapper<T>
+
+
+配置文件
+
+ mapper-locations: classpath*:mapper/**/*.xml
+   typeAliasesPackage: io.hz.modules.*.entity
+
+
+XML文件 ：
+
+Service接口层：
+继承 IService<T>
+
+service实现层：
+@Service
+
+ServiceImpl<XXDao,XXentity>
+
+
+controller层：
+@RestController   json
+
+@RequestParam Map<String, Object> params     //name=lisi&age=18.....
+
+增删改查， R：包装 --》json--》springboot自带返回json，返回json， 前台k.v
+
+
+前端：
+
+布局：bootstrap,数据绑定：vue.js,
+数据绑定
+{{errorMsg}}
+v-model="username"
+
+方法绑定：
+@keyup.enter="login"
+@click="refreshCode"
+@click="login"
+
+this.src = "captcha.jpg?t=" + $.now();
+
+欢迎 {{user.username}}
+
+
+login.html-->index.html---main.html
+
+  >>业务：#/modules/mis/业务.html
+     >>后台：return "modules/" + module + "/" + url;
+       >>templates/***/业务.html
+         >>
+
+学生管理：
+freemaker:
+#/modules/mis/misstudent.html-》SysPageController-》templates/modules/mis/misstudent.html
+
+<#include "/header.html">
+
+misstudent.html：布局
+v-model：
+@click：
+
+mis/misstudent.js：数据渲染
+
+
+新建一个模块：
+
+table-->entity-->dao-->service-->controller-->.html--->.js
+
+添加菜单

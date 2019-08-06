@@ -1,0 +1,36 @@
+.bb{
+    border:1px solid #ff7d62;
+    margin:2%;
+    border-radius: 10px;
+    padding:3%;
+    font-size:17px;
+    color: #ffb76f;
+    font-weight: bold;
+    letter-spacing:2px;
+    text-align: center;
+    background-color: #ffebf8;
+}
+.bc{
+    -webkit-align-items:center;
+    margin-top:18px;
+}
+.bd{
+    font-size: 23px;
+    color: #543b2c;
+}
+.be{
+    color: #747474;
+    margin-top: 5px;
+}
+.bf{
+    color: #ffa225;
+    font-size: 19px;
+}
+.bg{
+    color: #bababa;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.sc{
+    color: #6f6f6f;
+}

@@ -1,0 +1,45 @@
+.jingxuan{
+    margin:2px 35px 0px 35px;
+
+}
+
+.jing_a{
+    float: right;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: lighter;
+    color:grey;
+
+}
+a:hover{
+    color: #315eae;
+}
+.jingbiaoti{
+
+}
+.jingxiaozi{
+    color: #bdbdb6;
+}
+.jingmoney{
+    color: #ffb20d;
+    text-align: left;
+    padding-left: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing:1px
+}
+.jinghuamoney{
+    text-decoration:line-through;
+    color: #bdbdb6;
+    font-size: 12px;
+}
+.jingyice{
+    right: 8px;
+    margin-right: 3px;
+    color: #bdbdb6;
+    font-size: 14px;
+}
+.kuang{
+    display: none;
+}

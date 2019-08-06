@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>购买成功</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="${request.contextPath}/statics/css/pro/purchase.css" rel="stylesheet" type="text/css"/>
+    <link href="${request.contextPath}/statics/css/purchase.css" rel="stylesheet" type="text/css"/>
+    <script>
+        var a = '${misUserEntity.id}';
+    </script>
+</head>
+<body>
+
+<section class="aui-flexView" id="purchase">
+
+    <header class="aui-navBar aui-navBar-fixed b-line">
+        <div class="aui-center">
+            <span class="aui-center-title">购买成功</span>
+        </div>
+        <a href="javascript:window.history.back()" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+    <section class="aui-scrollView">
+        <div class="aui-back-box">
+            <div class="aui-back-pitch">
+                <img style="border-radius: 200px" src="${request.contextPath}/statics/image/icon-pitch.png" alt="">
+            </div>
+            <div class="aui-back-title">
+                <h2>已成功支付</h2>
+                <p>可以去测试啦~</p>
+            </div>
+            <div class="aui-back-button">
+                <button onclick="go()">马上测试</button>
+            </div>
+            <br>
+            <div class="aui-back-button">
+                <button onclick="back()">返  回</button>
+            </div>
+            <br>
+        </div>
+    </section>
+</section>
+
+<script src="${request.contextPath}/statics/libs/jquery.min.js"></script>
+<script src="${request.contextPath}/statics/libs/vue.min.js"></script>
+<script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+<script src="${request.contextPath}/statics/js/modules/pro/purchase.js"></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+</html>

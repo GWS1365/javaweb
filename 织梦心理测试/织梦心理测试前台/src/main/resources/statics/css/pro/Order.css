@@ -1,0 +1,15 @@
+
+
+.card{
+!important;
+    background: #f7f7f8;
+    margin-top: 5%;
+    position:relative;
+    border-radius: .1rem;
+    font-size:.7rem;
+
+}
+
+#article_div{
+    width: 100%;
+}

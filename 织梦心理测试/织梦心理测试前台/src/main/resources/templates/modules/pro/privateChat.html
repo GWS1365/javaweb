@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>私信</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="${request.contextPath}/statics/css/privateChat.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <section class="aui-flexView">
+        <header class="aui-navBar aui-navBar-fixed">
+            <a href="javascript:window.history.back()" class="aui-navBar-item">
+                <i class="icon icon-return"></i>
+            </a>
+            <div class="aui-center">
+                <span class="aui-center-title">私信</span>
+            </div>
+            <a href="#" class="aui-navBar-item">
+                <i class="icon icon-sys"></i>
+            </a>
+        </header>
+        <section class="aui-scrollView">
+            <div class="aui-view-box">
+                <div class="aui-view-box-item">
+                    <h2>私信:</h2>
+                    <textarea id="focus_advice" placeholder="开始编写你的小私信吧（字数在200字以内呀）"></textarea>
+                </div>
+                <div class="aui-view-box-item">
+                    <h2>联系方式:</h2>
+                    <input type="text"  id="focus_phone" placeholder="输入微信号或者QQ号">
+                </div>
+                <div class="aui-view-box-item">
+                    <p id = "contact">留下你的联系方式,以便我们查阅私信后及时反馈给你哦</p>
+                </div>
+                <div class="aui-btn-submit">
+                    <a href=""><button type="submit" id="submit">提交</button></a>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+
+<script>
+    $(document).ready(function () {
+         $("#submit").click(function(){
+                var text = $("#focus_advice").val();
+                var contact = $("#focus_phone").val();
+                var uid = '${misUserEntity.id}';
+                $.ajax({
+                    type:"post",
+                    url:"../../mis/misprivatechat/add?content="+text+"&contact="+contact+"&uid="+uid,
+                    data:{
+                        y:{},
+                    },
+                    success:function(r){
+                        if(r.msg=="success"){
+                            alert("提交成功");
+                            window.history.back()
+                        }else{
+                            alert("提交失败");
+                        }
+                    }
+                })
+         });
+    })
+</script>
+
+</html>

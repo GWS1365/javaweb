@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发表评价</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="${request.contextPath}/statics/css/w_comment.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="${request.contextPath}/statics/css/Font-Awesome-3.2.1/css/font-awesome.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="${request.contextPath}/statics/libs/vue.min.js"></script>
+    <script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+    <script src="${request.contextPath}/statics/js/w_comment.js"></script>
+    <script src='${request.contextPath}/statics/js/modules/pro/toast.js'></script>
+</head>
+<body>
+
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <a href="javascript:window.history.back()" class="aui-navBar-item">
+            <i class=" icon-angle-left icon-2x"></i>
+        </a>
+        <div class="aui-center">
+            <span class="aui-center-title">发表评论</span>
+        </div>
+        <a href="#" class="aui-navBar-item">
+            <i class="icon icon-sys"></i>
+        </a>
+    </header>
+
+    <section class="aui-scrollView">
+        <div class="aui-view-box" id="a">
+            <form action="" method="post" name="form1" onsubmit="return check()">
+
+                <div class="aui-view-box-item" >
+                    <h2>评分:</h2>
+                    <div>
+                        <div style="margin:3%">
+                            <span class="comment_span">题目易懂性：</span>
+                            <i class="icon-star-empty click_star" @click="add1"></i>
+                            <i class="icon-star-empty click_star" @click="add1"></i>
+                            <i class="icon-star-empty click_star" @click="add1"></i>
+                            <i class="icon-star-empty click_star" @click="add1"></i>
+                            <i class="icon-star-empty click_star" @click="add1"></i>
+                        </div>
+                        <div style="margin:3%">
+                            <span class="comment_span">结果准确性：</span>
+                            <i class="icon-star-empty click_star_2"></i>
+                            <i class="icon-star-empty click_star_2"></i>
+                            <i class="icon-star-empty click_star_2"></i>
+                            <i class="icon-star-empty click_star_2"></i>
+                            <i class="icon-star-empty click_star_2"></i>
+                        </div>
+                        <div style="margin:3%">
+                            <span class="comment_span">建议实用性：</span>
+                            <i class="icon-star-empty click_star_3"></i>
+                            <i class="icon-star-empty click_star_3"></i>
+                            <i class="icon-star-empty click_star_3"></i>
+                            <i class="icon-star-empty click_star_3"></i>
+                            <i class="icon-star-empty click_star_3"></i>
+                        </div>
+
+                    </div> 
+
+                </div>
+
+                <div class="aui-view-box-item">
+                    <h2>你的评价:</h2>
+                    <textarea id="focus_advice" name="form_textarea" placeholder="快来分享你的测试心得吧~" class="t"></textarea>
+                </div>
+
+                <div class="aui-view-box-item">
+                    <p>太好了，你来评价了！</p>
+                </div>
+                <div class="aui-btn-submit">
+                    <button type="button" id = "submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</section>
+
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+
+<script>
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    var tid = getUrlParam("tid");
+    var a;
+    var b;
+    var c;
+    var uid = '${misUserEntity.id}';
+    $(".click_star").click(function () {
+        //获取被点击的i标签的索引号
+        var m = $(this).index(".click_star");
+        for (var i = 0;i < 5; i++) {
+        //把索引号及之前的星星变成黄色
+            if( i <= m ){
+                $(".click_star:eq("+ i +")").removeClass("icon-star-empty");
+                $(".click_star:eq("+ i +")").addClass("icon-star").css("color","#f1ec5a");
+            }else{//后面的就变空心
+                $(".click_star:eq("+ i +")").removeClass("icon-star");
+                $(".click_star:eq("+ i +")").addClass("icon-star-empty");
+            }
+        }
+        a=m+1;
+    });
+
+    $(".click_star_2").click(function () {
+        //获取被点击的i标签的索引号
+        var m = $(this).index(".click_star_2");
+        for (var i = 0;i < 5; i++) {
+            //把索引号及之前的星星变成黄色
+            if( i <= m ){
+                $(".click_star_2:eq("+ i +")").removeClass("icon-star-empty");
+                $(".click_star_2:eq("+ i +")").addClass("icon-star").css("color","#f1ec5a");
+            }else{//后面的就变空心
+                $(".click_star_2:eq("+ i +")").removeClass("icon-star");
+                $(".click_star_2:eq("+ i +")").addClass("icon-star-empty");
+            }
+        }
+        b=m+1;
+    });
+
+    $(".click_star_3").click(function () {
+        //获取被点击的i标签的索引号
+        var m = $(this).index(".click_star_3");
+        for (var i = 0;i < 5; i++) {
+            //把索引号及之前的星星变成黄色
+            if( i <= m ){
+                $(".click_star_3:eq("+ i +")").removeClass("icon-star-empty");
+                $(".click_star_3:eq("+ i +")").addClass("icon-star").css("color","#f1ec5a");
+            }else{//后面的就变空心
+                $(".click_star_3:eq("+ i +")").removeClass("icon-star");
+                $(".click_star_3:eq("+ i +")").addClass("icon-star-empty");
+            }
+        }
+        c=m+1;
+    });
+    $("#submit").click(function(){
+        var t = $(".t").val();
+        $.ajax({
+            type:"post",
+            url:"../../mis/miscomment/add?content="+t+"&testunderstand="+a+"&testexact="+b+"&testpractical="+c+"&tid="+tid+"&uid="+uid,
+            data:{
+                y:{},
+            },
+            success:function(r){
+                if(r.msg=="success"){
+                    alert("提交成功");
+                    window.history.back()
+                }else{
+                    alert("提交失败");
+                }
+            }
+         })
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,327 @@
+
+.img_div{
+    width:100%;
+    height:46%;
+}
+.img_First{
+    width:100%;
+    height:100%;
+}
+
+.card_1{
+    background-color: white;
+    width:100%;
+    height: 20%;
+}
+
+.card_1 h4{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.card_1 p{
+    color: #999;
+    margin: 0;
+    padding: 0;
+    font-size:12px;
+    text-align: center;
+}
+.card_1 div{
+    color: red;
+    font-weight: bold;
+    font-size:22px;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.card_2{
+    background-color: white;
+    width:100%;
+    height: 180%;
+}
+
+.card_2 h4{
+    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+.card_2 .hr_new{
+    padding: 0;
+    background-color:#999;
+    border: none;
+    height:2px;
+    width:15%;
+}
+
+
+.ul_first{
+    padding:30% 0 0 5%;
+    margin: 0;
+    display:inline;
+    white-space: nowrap;
+}
+
+
+.ul_li_first{
+    width:28%;
+    padding: 6px 10px;
+    display: inline-block;
+    background:pink;
+    font-size: 12px;
+    white-space:nowrap;
+    text-align: center;
+}
+
+#card_1{
+    background-color:rgba(228,228,228,0.36);
+    margin:8% 5% 0 5%;
+}
+
+#card_1_div{
+    font-family: KaiTi;
+    color: #8268ff;
+    font-weight: bold;
+}
+
+#card_div_1{
+    color: #999;
+}
+
+#card_2{
+    background-color:rgba(228,228,228,0.36);
+    margin:8% 5% 0 5%;
+}
+
+#card_2_div{
+    font-family: KaiTi;
+    color: #8268ff;
+    font-weight: bold;
+}
+
+#card_div_2{
+    color: #999;
+}
+
+#card_3{
+    background-color:rgba(228,228,228,0.36);
+    margin:8% 5% 0 5%;
+}
+
+#card_3_div{
+    font-family: KaiTi;
+    color: #8268ff;
+    font-weight: bold;
+}
+
+
+#card_div_3{
+    color: #999;
+}
+
+
+
+.aui-news-cox-box {
+    padding: 0;
+    display:inline;
+}
+
+.aui-news-cox-box .aui-flex {
+    padding: 0;
+    color: #ffae31;
+    margin-bottom: 5px;
+    display:inline;
+}
+
+
+.aui-news-cox-red {
+    background: #ffead2;
+    width: 90px;
+    border-radius: 100px 0 0 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    display:inline;
+}
+
+
+.show_1{
+    margin: 10px 10% 10px 10%;
+}
+
+.show_1_div{
+    color:#8268ff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+/*用户评价*/
+
+
+#user_evaluate_1 {
+    padding: 0px;
+    margin:0 2% 0 8%;
+}
+
+#user_evaluate_1:after {
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+.chart{
+    width: 30%;
+    height: 100px;
+    float: left;
+}
+@media (max-width: 980px) {
+    .chart {
+        height: 200px;
+    }
+}
+@media (max-width: 750px) {
+    .chart {
+        width: 33.333333%;
+    }
+}
+@media (max-width: 500px) {
+    .chart {
+        width: 30%;
+        height: 150px;
+    }
+}
+
+.chart_tag1{
+
+    width: 30%;
+    display: inline;
+    padding: 0;
+    font-size: 60%;
+    color: #0d18ee;
+    font-weight: bold;
+}
+
+
+
+.shadow_border{
+    margin: 0 0 0 12%;
+    border: 2px solid #1854cf;padding: 6px; width:10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+#user_evaluate_2{
+
+}
+
+.evaluate_1 {
+   margin: 10% 0 3% 12%;
+}
+
+.evaluate_2 {
+    margin: 5% 0 3% 12%;
+}
+
+
+.evaluate_1 img{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.evaluate_2 img{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.new_hr{
+    width: 80%;
+}
+
+.evaluate_2_span{
+   font-size: 10px;
+   color: #9c9c9c;
+   padding: 0;
+}
+
+.evaluate_2_p{
+    font-size: 10px;
+    color: black;
+    padding: 0;
+}
+.button_evaluate{
+    margin-left: 20%;
+    width: 60%;
+}
+
+.float_div{
+    width: 80%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+.float_img{
+    width: 30%;
+    float: right;
+    height: 30%;
+    margin-right: 10%;
+}
+.float_text{
+    float: left;
+}
+.recommend_title{
+    margin: 0 0 3% 5%;
+}
+
+.recommend_vtitle{
+    color: #999;
+    margin:  0 0 0 5%;
+    padding: 0;
+    font-size:12px;
+}
+
+.recommend_img{
+    margin:  0 10% 0 70%;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+.e_score{
+    color:red;
+    font-size:15px;
+    margin:  0 0 0 5%;
+}
+
+.e_hr{
+    width: 88%;
+}
+
+
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    opacity: .70;
+}
+.white_content{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 58%;
+    height: 40%;
+    padding: 16px;
+    /*border: 16px solid orange;*/
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+}

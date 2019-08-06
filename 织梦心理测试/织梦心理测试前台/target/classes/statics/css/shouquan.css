@@ -1,0 +1,83 @@
+.logo{
+    height:45px;
+    width:45px;
+    border-radius: 50%;
+}
+.log{
+
+    text-align: center;
+}
+.ab{
+    display: flex;
+    -webkit-align-items:center;
+
+    font-size: 17px;
+    font-weight:600 ;
+    color: #555555;
+    margin:3%;
+}
+.ac{
+    font-size: 20px;
+    font-weight: bold;
+    padding:13px;
+    color: #212121;
+    margin:3%
+}
+.ad{
+    display: flex;
+    -webkit-align-items:center;
+    border-top:1px solid #e7e7e7;
+    border-bottom:1px solid #e7e7e7;
+    padding:5px;
+    margin:3%;
+}
+.ai{
+    height:65px;
+    width:65px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.aj{
+    display: inline-block;
+    padding:8px;
+    margin-left: 10px;
+
+}
+.ak{
+    font-weight: bold;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+.al{
+    color: #b9b9b9;
+}
+.button1{
+    background-color: #b6b6b6;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    cursor: pointer;
+    width:155px;
+    height:45px;
+
+}
+.button2{
+    background-color: #008800;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    cursor: pointer;
+    width:155px;
+    height:45px;
+}
+.bt{
+    text-align: center;
+}

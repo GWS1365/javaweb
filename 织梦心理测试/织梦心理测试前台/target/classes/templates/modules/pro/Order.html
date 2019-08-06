@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/statics/css/pro/Order.css">
+    <script>
+        var a = '${misUserEntity.id}';
+    </script>
+</head>
+<body>
+
+<div class="page">
+    <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left" href="javascript:window.history.back()" data-transition='slide-out' external>
+            <span class="icon icon-left"></span>
+
+        </a>
+        <h1 class="title">我的订单</h1>
+    </header>
+    <nav class="bar bar-tab">
+        <a class="tab-item active" external href="${request.contextPath}/modules/pro/first2.html">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a class="tab-item" external href="${request.contextPath}/modules/pro/wode1.html">
+            <span class="icon icon-me"></span>
+            <span class="tab-label">我的</span>
+        </a>
+    </nav>
+    <div class="content" id="card">
+
+
+        <div class="card" v-for="(order,i) in orders" >
+            <div class="card-header">订单编号:
+                <span style="color: #81cdf4">{{order.orderid}}</span></div>
+            <div class="card-content" id="article_div">
+                <div class="list-block media-list">
+                    <ul >
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img :src="order.timgsrc" width="44">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{order.tname}}</div>
+                                </div>
+                            </div>
+
+                            <div style="float: right">
+                                <a external :href="'../../modules/pro/test_result.html?cid='+order.cid+'&tid='+order.tid+'&pid='+order.pid" external style="color: black;font-size:15px">
+                                    查看报告</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span>{{order.createtime}}</span>
+                <span>￥{{order.tprice}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${request.contextPath}/statics/libs/jquery.min.js"></script>
+<script src="${request.contextPath}/statics/libs/vue.min.js"></script>
+<script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+<script src="${request.contextPath}/statics/js/modules/pro/Order.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>咨询</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/statics/css/consult.css" type="text/css">
+    <script src="${request.contextPath}/statics/libs/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="page" style="background-color:white">
+    <div class="content">
+
+        <!--图片标题处-->
+        <div class="main_div">
+            <img  src="${request.contextPath}/statics/image/weaveDream.jpg"/>
+            <div class="div_title">织梦心测系统</div>
+            <div class="div_content">身在顺境，我们固然可喜，面对逆境，也不必太过忧伤。塞翁失马，焉知非福。
+                我们要正确对待生活的每一分，每一秒~</div>
+        </div>
+
+        <!--中间选择区域-->
+        <div>
+            <div class="first_line" ></div>
+            <div>
+                <div class="private_div">
+                    <a href="javascript:window.history.back()" style="color: black">返回</a><span class="icon icon-menu"></span>
+                </div><div class="private_div">
+                    <a href="${request.contextPath}/modules/pro/privateChat.html" style="color: black">私信</a><span class="icon icon-emoji"></span>
+                </div>
+            </div>
+            <div class="first_line" ></div>
+        </div>
+
+
+        <!--推荐文章区域-->
+        <div style="margin:3%;font-size:15px">治愈文章</div>
+        <div class="card" id="article">
+            <div class="card-content" id="article_div">
+                <div class="list-block media-list">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img src="${request.contextPath}/statics/image/article_1.PNG" width="44">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">
+                                        <a href="https://mp.weixin.qq.com/s/oizjFHpLMQz7sRAZizZB_w " external style="color: black;font-size:15px">深夜与内格罗尼</a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img src="${request.contextPath}/statics/image/article_2.PNG" width="44">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">
+                                        <a href="https://mp.weixin.qq.com/s/rk487pLkKv78MshyzajGrw"  external style="color: black;font-size:15px">他叫哈皮，是一条拉布拉多</a></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img src="${request.contextPath}/statics/image/article_3.PNG" width="44">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">
+                                        <a href="https://mp.weixin.qq.com/s/JSOvFkIzhh-Wj8r4TNSsGQ" external style="color: black;font-size:15px">生活很美好，只是偶尔有牢骚</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test_result</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/statics/css/pro/test_result.css">
+    <script src="${request.contextPath}/statics/libs/jquery.min.js"></script>
+    <script>
+                var a = '${misUserEntity.id}';
+    </script>
+</head>
+<body>
+<div id="test_result_div">
+<nav class="bar bar-tab">
+    <a class="tab-item active" href="${request.contextPath}/modules/pro/first2.html">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">首页</span>
+    </a>
+    <a class="tab-item" :href="'../../modules/pro/w_comment.html?tid='+result.results[0].tid">
+        <span class="icon icon-message"></span>
+        <span class="tab-label" >发表评论</span>
+    </a>
+</nav>
+
+<!--页面内容-->
+<div class="content" style="background-color:white" >
+
+    <!--矩形框-->
+    <div class="ret_div">
+
+        <div class="div_first">
+            <span class="ret_span">{{result.results[0].tname}}</span>
+            <div>测试人：{{result.results[0].uname}}</div>
+            <div>测试时间：{{result.results[0].testtime}}</div>
+        </div>
+
+    </div>
+
+    <!--卡片1-->
+    <div class="card" id="card_1">
+        <div class="card-header" id="card_1_div">你的结果:</div>
+        <div class="card-content">
+            <div class="card-content-inner" id="card_div_1">
+                {{result.results[0].presult}}
+            </div>
+        </div>
+    </div>
+
+    <!--卡片2-->
+    <div class="card facebook-card" id="card_2">
+        <div class="card-header no-border">
+            <div class="facebook-avatar"><img src="${request.contextPath}/statics/image/123.jpg" width="34" height="34"></div>
+            <div class="facebook-name">{{result.results[0].uname}}</div>
+
+        </div>
+        <div class="card-content" id="card_content"><img :src="result.results[0].timgsrc" width="100%">
+            <div> {{result.results[0].pdetails}}
+            </div>
+        </div>
+    </div>
+
+    <!--卡片3-->
+    <div class="card" id="card_3">
+        <div class="card-header" style="color: #999">相关推荐</div>
+        <div class="card-content">
+            <div class="list-block media-list" v-for="v in result.recommend">
+                <ul>
+                    <a :href="'../../modules/pro/test1.html?id='+v.id+'&cid='+v.cid">
+                        <li class="item-content">
+                            <div class="item-media">
+                                <img :src="v.imgsrc" width="44">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" style="color: #999">{{v.title}}</div>
+                                </div>
+                                <div class="item-subtitle" style="color: red;font-size:1px">{{v.testnumber}}人已测</div>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer">
+            <span style="color: #999"></span>
+            <span style="color: #999">米青采彡</span>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="${request.contextPath}/statics/libs/vue.min.js"></script>
+<script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+<script src="${request.contextPath}/statics/js/modules/pro/test_result.js"></script>
+
+</div>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+</html>

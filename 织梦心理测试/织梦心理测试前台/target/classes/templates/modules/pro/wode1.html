@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <!--自定义css-->
+    <link rel="stylesheet" type="text/css" href="${request.contextPath}/statics/css/wode.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+
+<div class="page-group" id="total_test">
+    <div class="page page-current">
+        <!--顶部标题栏-->
+        <header class="bar bar-nav">
+            <a href="javascript:window.history.back()" class="icon icon-left pull-left .close-panel"></a>
+            <h1 class="title">织梦心测</h1>
+        </header>
+
+        <!--底部导航栏-->
+        <nav class="bar bar-tab">
+            <a class="tab-item active  external" href="${request.contextPath}/modules/pro/first2.html">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item  external" href="${request.contextPath}/modules/pro/fenlei2.html">
+                <span class="icon icon-menu"></span>
+                <span class="tab-label ">分类</span>
+            </a>
+            <a class="tab-item  external" href="${request.contextPath}/modules/pro/consult.html">
+                <span class="icon icon-settings"></span>
+                <span class="tab-label ">咨询</span>
+            </a>
+            <a class="tab-item external" href="${request.contextPath}/modules/pro/wode1.html">
+                <span class="icon icon-me"></span>
+                <span class="tab-label ">我的</span>
+            </a>
+        </nav>
+
+        <!-- 页面内容区 -->
+        <div class="content">
+
+            <div class="xinxi" id="wode">
+                <div class="touxiang">
+                    <img :src="user.headimgurl" style="height: 75px;width: 75px;border-radius: 50%;">
+                </div>
+                <div class="huanying">
+                    欢迎回来,{{user.nickname}}
+                </div>
+            </div>
+            <br>
+            <div class="card" style="border-radius: 5px;">
+                <div class="card-header service">我的服务</div>
+
+                <div class="card-content">
+                    <div class="card-content-inner">
+                        <div class="as" style="display: inline-block">
+                            <a href="${request.contextPath}/modules/pro/Order.html">
+                                <img src="${request.contextPath}/statics/image/report.png" class="img1"/>
+                                <div class="report">我的报告</div>
+                            </a>
+                        </div>
+                        <div class="as" style="display: inline-block">
+                            <a href="${request.contextPath}/modules/pro/shoucang.html">
+                                <img src="${request.contextPath}/statics/image/store.png" class="img1"/>
+                                <div class="report">我的收藏</div>
+                            </a>
+                        </div>
+                        <div class="as" style="display: inline-block">
+                            <a href="${request.contextPath}/modules/pro/weiceping.html">
+                                <img src="${request.contextPath}/statics/image/command.png" class="img1"/>
+                                <div class="report">未答测评</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="border-radius: 5px;">
+                <div class="card-header service">解压小游戏</div>
+
+                <div class="card-content">
+                    <div class="card-content-inner">
+                        <a href="https://jkb1.github.io/MyGames-Egret/play/">
+                            <img src="${request.contextPath}/statics/image/game.jpg" style="width: 350px;height: 250px"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+<script src="${request.contextPath}/statics/js/wode.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+
+</body>
+</html>

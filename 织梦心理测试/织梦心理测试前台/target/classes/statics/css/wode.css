@@ -1,0 +1,46 @@
+.xinxi{
+
+    padding:3% 3% 3% 3%;
+    display: flex;
+
+}
+
+
+.touxiang{
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    -webkit-align-items:center;
+
+}
+
+.huanying{
+    display: flex;
+    -webkit-align-items:center;
+    font-size: 18px;
+    color: #848484;
+    font-weight: bold;
+
+}
+
+.service{
+    font-weight: bold;
+}
+
+.img1{
+    height:53px;
+    width:53px;
+
+}
+
+
+
+.as a:link{
+    color:grey;
+    text-decoration:none;
+}
+
+.as{
+    width:85px;
+    text-align: center;
+}

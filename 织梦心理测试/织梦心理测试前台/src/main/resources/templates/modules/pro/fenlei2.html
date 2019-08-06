@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>织梦心测</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--引入sui-->
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <!--引入jquery-->
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <!--引入bootstrap-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="${request.contextPath}/statics/libs/axios.min.js"></script>
+    <!--自定义样式-->
+    <!--若是加上后端，则路径要改-->
+    <link rel="stylesheet" type="text/css" href="${request.contextPath}/statics/css/fenlei.css">
+</head>
+<body>
+
+<!-- 标题栏 -->
+<div class="page-group">
+    <header class="bar bar-nav">
+        <a href="javascript:window.history.back()" class="icon icon-left pull-left .close-panel"></a>
+        <h1 class="title">织梦心测</h1>
+    </header>
+    <nav class="bar bar-tab">
+        <a class="tab-item external active" external href="${request.contextPath}/modules/pro/first2.html">  <!--如何跳转页面-->
+            <span class="icon icon-home"></span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a class="tab-item external" href="${request.contextPath}/modules/pro/fenlei2.html">   <!--直接这样跳转页面即可？-->
+            <span class="icon icon-star"></span>
+            <span class="tab-label">分类</span>
+        </a>
+        <a class="tab-item external" href="${request.contextPath}/modules/pro/consult.html">
+            <span class="icon icon-settings"></span>
+            <span class="tab-label">咨询</span>
+        </a>
+        <a class="tab-item external" href="${request.contextPath}/modules/pro/wode1.html">
+            <span class="icon icon-me"></span>
+            <span class="tab-label">我的</span>
+        </a>
+    </nav>
+    <!-- 这里是页面内容区 -->
+    <div class="content">
+        <div class="m-scrolltab" data-ydui-scrolltab>
+            <!--分类导航栏-->
+            <div class="scrolltab-nav" id="daohang" >
+                <div>
+                    <a href="${request.contextPath}/modules/pro/fenlei2.html" class="scrolltab-item">
+                        <div class="scrolltab-title">全部</div>
+                    </a>
+                </div>
+                <div v-for="c in categories">  <!--v-for="(v,index) in json.scrolltabnav"-->
+
+                    <!--***************************导航栏***************************************-->
+                    <a :href="'${request.contextPath}/modules/pro/fenlei2.html?cid='+c.id" class="scrolltab-item" >
+                        <div class="scrolltab-title" v-cloak>{{c.name}}</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="scrolltab-content" id="fenlei">
+                <div class="scrolltab-content-item">
+                    <div style="margin: 20px;padding: 13px;text-align:center;border: 1px solid grey;border-radius: 5px;background-color: #fef9ee;color: #414340">
+                        愿你眼里长着太阳，笑里全是坦荡^_^
+                    </div>
+
+                    <!--测试题目框-->
+                    <div class="aui-six-list"  v-cloak>
+
+                        <!--***********************************题目**************************************-->
+                        <!--循环后端获取值-->
+                        <div id="fen3" class="aui-six-list-item" v-for="v in tests">
+                            <a :href="'../../modules/pro/test1.html?id='+v.id+'&cid=1'">
+                                <div class="aui-flex b-line">
+                                    <div class="aui-six-img">
+                                        <img :src="v.imgsrc" alt="" style="width: 80px;height: 80px;border-radius: 4px;">
+                                    </div>
+                                    <div class="aui-flex-box">
+                                        <h3 v-cloak>{{v.title}}</h3>
+                                        <h4 class="xiaozi" v-cloak>{{v.testintroduce}}</h4>
+                                    </div>
+                                </div>
+                                <div class="aui-bottom-text">
+                                    <span class="money" v-cloak>￥{{v.price}}</span>
+                                    <span  v-cloak>{{v.testnumber}}人已测</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--引入vue-->
+<!--将vue.js导入包放在<script>调用前网络加载会更快。：验证：打开网页，F12-> network->Online->SLOW 3G->刷新可以很慢的看到插件表达式内容-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!--引入JS-->
+<script src="${request.contextPath}/statics/js/fenlei.js"></script>
+<script src="${request.contextPath}/statics/js/wx.js"></script>
+</body>
+</html>

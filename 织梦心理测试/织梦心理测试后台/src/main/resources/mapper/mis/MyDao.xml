@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--dao 包路径 -->
+<mapper namespace="io.hz.modules.mis.dao.MyDao">
+    <select id="select1" resultType="io.hz.modules.mis.entity.ExportEntity" parameterType="map">
+        select a.title,a.price,a.testnumber,a.testintroduce,a.createtime,b.name as cname from mis_test a,mis_category b where a.cid=b.id
+    </select>
+</mapper>

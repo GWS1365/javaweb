@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--dao 包路径 -->
+<mapper namespace="io.hz.modules.mis.dao.MisTestDao">
+    <!--<resultMap id="misTestMap" type="io.hz.modules.mis.entity.MisTestEntity">-->
+        <!--<result property="id" column="id"/>-->
+        <!--<result property="title" column="title"/>-->
+        <!--<result property="imgsrc" column="imgsrc"/>-->
+        <!--<result property="price" column="price"/>-->
+        <!--<result property="testnumber" column="testnumber"/>-->
+        <!--<result property="testintroduce" column="testintroduce"/>-->
+        <!--<result property="createtime" column="createtime"/>-->
+        <!--<result property="cid" column="cid"/>-->
+    <!--</resultMap>-->
+
+    <!--<select id="Myquery" resultType="MisTestEntity">-->
+        <!--select a.name as cname , b.id,b.title,b.imgsrc,b.price,b.testnumber,b.testintroduce,b.createtime from mis_category a,mis_test b where a.id=b.cid and b.title like '%#{title}%'-->
+    <!--</select>-->
+</mapper>

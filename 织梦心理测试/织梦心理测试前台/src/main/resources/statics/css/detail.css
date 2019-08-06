@@ -1,0 +1,68 @@
+#header_1{
+    background-color: #00c0d6;
+    padding-bottom: 12%;
+}
+
+#header_h1{
+    font-weight: bold;
+    color: #f3f6fd;
+}
+
+#header_a{
+    color: #f3f6fd;
+}
+
+.test_title h4{
+    margin: 0;
+    padding-top: 10%;
+    /*padding-bottom: 0;*/
+    text-align: center;
+}
+.hr_new{
+    padding: 0;
+    background-color:#00c0d6;
+    border: none;
+    height:2px;
+    width:15%;
+}
+
+.test_option{
+    margin: 10%;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    height:66%;
+    box-shadow: 0 2px 2px 0 transparent, 0 1px 5px 0 rgba(0, 0, 0, 0.24), 0 3px 1px -2px transparent;
+}
+
+.test_option .option_div{
+
+    height: 160%;
+    margin: 3%;
+    line-height: 10px;
+
+}
+
+.test_option .option_div div{
+    font-weight: bold;
+    line-height:150%;
+}
+
+.option_button{
+    margin: 5%;
+    font-weight: bold;
+}
+
+.button-default {
+    background: #fff;
+    color: #333;
+    margin-bottom: 0;
+    width: 50%;
+}
+
+.footer_1{
+  bottom: 0;
+  position: absolute;
+  width:100%;
+  background-color: black;
+}

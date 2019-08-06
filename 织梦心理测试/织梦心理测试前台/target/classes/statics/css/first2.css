@@ -1,0 +1,153 @@
+/*搜索框样式*/
+.searchbar{
+
+    width: 40%;
+    float:right;
+    margin-bottom: 5%;
+}
+#search{
+    background-color: rgba(238, 238, 238, 0.65);
+    border-radius: 50px;
+    width:80%;
+}
+
+/*<!-- 轮播样式 -->*/
+*{
+    padding:0px;
+    border:0px;
+    margin:0px;
+}
+ul {
+    list-style:none;
+}
+.slideBox {
+
+    width:300px;
+    height:200px;
+    margin-left:20px;
+    box-shadow:2px 2px 10px #C38DD4;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+}
+.slideBox ul {
+    position:relative;
+    width:3000px;   /*轮播ul li数量的长度*/
+}
+.slideBox ul li {
+    float:left;
+    width:420px;
+    height:200px;
+    position:relative;
+
+}
+.spanBox {
+    position:absolute;
+    width:120px;
+    height:20px;
+    bottom:10px;
+    left:90px;
+}
+.spanBox span {
+    width:18px;
+    height:18px;
+    margin-left:5px;
+    background-color:rgba(201,178,207,1.00);
+    float:left;
+    line-height:16px;
+    text-align:center;
+    text-shadow:2px 2px 2px #C5EBF0;
+    font-family:cabin-sketch;
+    font-size:15px;
+}
+.slideBox .spanBox .active {
+    background-color:rgba(155,83,244,0.79);
+    border:solid 1px #BEEBEC;
+    border-radius:4px;
+}
+
+/*热卖爆款*/
+.remai{
+    margin-left: 3%;
+
+}
+
+/*精选测评*/
+.jingxuan{
+    margin:2px 35px 0px 35px;
+
+}
+
+.jing_a{
+    float: right;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: lighter;
+    color:grey;
+
+}
+a:hover{
+    color: #315eae;
+}
+.jingbiaoti{
+
+}
+.jingxiaozi{
+    color: #bdbdb6;
+}
+.jingmoney{
+    color: #ffb20d;
+    text-align: left;
+    padding-left: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing:1px
+}
+.jinghuamoney{
+    text-decoration:line-through;
+    color: #bdbdb6;
+    font-size: 12px;
+}
+.jingyice{
+    right: 8px;
+    margin-right: 3px;
+    color: #bdbdb6;
+    font-size: 14px;
+}
+
+.item-content{
+
+}
+.check{
+    color:grey;
+    width:77%;
+    height:8%;
+    display: flex;
+    -webkit-justify-content:center;
+    position: relative;
+    margin-top:8px;
+    background-color: #e1e1e1;
+    text-align: center;
+    padding-top:5px;
+    margin-left: 12%;
+}
+
+ .pic{
+
+
+    /*background: url('images/weaveDream.jpg');*/
+    }
+    .img img{
+
+    height: 230px;
+    width: 90%;
+    float: left;
+    margin-left:5%;
+    }
+ .img{
+
+    height: 230px;
+    width: 100%;
+    margin-top:17%;
+    }
