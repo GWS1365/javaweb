@@ -1,0 +1,23 @@
+<div class="pageDiv" th:fragment="html" xmlns:th="http://www.w3.org/1999/xhtml">
+    <nav>
+        <ul class="pagination">
+            <li :class="{disable: pagination.first }">
+                <a href="#nowhere" @click="jump('first')">«</a>
+            </li>
+            <li :class="{disable: !pagination.hasPrevious }">
+                <a href="#nowhere" @click="jump('pre')">‹</a>
+            </li>
+            <li v-for="i in pagination.navigatepageNums">
+                <a href="#nowhere" @click="jumpByNumber(i-1)">
+                    {{i}}
+                </a>
+            </li>
+            <li :class="{disable: !pagination.hasNext } ">
+                <a href="#nowhere" @click="jump('next')">›</a>
+            </li>
+            <li :class="{disable: pagination.last }">
+                <a href="#nowhere" @click="jump('last')">»</a>
+            </li>
+        </ul>
+    </nav>
+</div>
